@@ -17,4 +17,4 @@ def insert(sql):
     cursor.execute(sql)
     cursor.close()
     con.close()
-    pass
+
