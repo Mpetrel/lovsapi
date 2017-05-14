@@ -22,5 +22,5 @@ def query(sql, param):
     results = data.fetchall()
     cursor.close()
     con.close()
-    return data.fetchall()
+    return results
 
