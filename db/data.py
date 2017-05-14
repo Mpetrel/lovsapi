@@ -11,10 +11,13 @@ import sqlite3
 db_location = 'data.db'
 
 
-def insert(sql):
+def connect_database():
     con = sqlite3.connect(db_location)
     cursor = con.cursor()
-    cursor.execute(sql)
-    cursor.close()
-    con.close()
+    return con, cursor
+
+def query(sql, param):
+    con, cursor = connect_database()
+    data = cursor.execute(sql, param)
+    return data.fetchall()
 

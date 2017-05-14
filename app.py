@@ -5,7 +5,15 @@
 # @Site    : 
 # @File    : app.py
 # @Software: PyCharm Community Edition
-import db.data as mdb
+from flask import Flask
+from route.mzt import mzt
 
-if __name__ == "__main__":
-    mdb.insert('select * from stocks')
+app = Flask(__name__)
+app.register_blueprint(mzt, url_prefix='/mzt/v1')
+
+@app.route("/")
+def index():
+    return "hello world!"
+
+if __name__ == '__main__':
+    app.run(port=8080, debug=True)
