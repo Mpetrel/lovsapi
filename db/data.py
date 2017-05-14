@@ -19,5 +19,8 @@ def connect_database():
 def query(sql, param):
     con, cursor = connect_database()
     data = cursor.execute(sql, param)
+    results = data.fetchall()
+    cursor.close()
+    con.close()
     return data.fetchall()
 
