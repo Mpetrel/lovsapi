@@ -6,5 +6,5 @@
 # @File    : spider.py
 # @Software: PyCharm Community Edition
 
-def start_zhihu:
+def start_zhihu():
     pass
